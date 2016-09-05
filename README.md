@@ -27,7 +27,7 @@ npm i qn-html-loader --save-dev
 
 `webpack.config.js`:
 
-```json
+```javascript
 {
   // ...
   module: {
