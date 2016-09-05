@@ -1,0 +1,22 @@
+{
+  "name": "qn-html-loader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nighca/qn-html-loader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nighca/qn-html-loader/issues"
+  },
+  "homepage": "https://github.com/nighca/qn-html-loader#readme",
+  "dependencies": {
+    "htmlparser2": "^3.9.1"
+  }
+}
