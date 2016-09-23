@@ -41,7 +41,9 @@ module.exports = function (source, callback) {
     },
 
     onend: function () {
-      tags.push(current)
+      if (current) {
+        tags.push(current)
+      }
 
       callback(null, tags)
     }
