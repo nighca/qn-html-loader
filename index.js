@@ -21,16 +21,16 @@ var templates = {
 module.exports = function (source, map) {
   var loader = this
 
-  loader.cacheable()
+  loader.cacheable && loader.cacheable()
 
   parse(source, function (err, tags) {
     if (err) {
       loader.callback(
-        new Error(
-          'parse HTML failed in "' + loader.resourcePath + '": ' + (
-            err.message || err
+          new Error(
+              'parse HTML failed in "' + loader.resourcePath + '": ' + (
+                  err.message || err
+              )
           )
-        )
       )
       return
     }
@@ -49,8 +49,8 @@ module.exports = function (source, map) {
       })
 
       parts = parts.concat(
-        JSON.stringify(source.slice(pos, tag.start)),
-        template(resourcePath, attrs)
+          JSON.stringify(source.slice(pos, tag.start)),
+          template(resourcePath, attrs)
       )
 
       pos = tag.end
@@ -59,9 +59,9 @@ module.exports = function (source, map) {
     parts.push(JSON.stringify(source.slice(pos)))
 
     loader.callback(
-      null,
-      'module.exports = ' + parts.join(' + ') + ';',
-      map
+        null,
+        'module.exports = ' + parts.join(' + ') + ';',
+        map
     )
   })
 }
